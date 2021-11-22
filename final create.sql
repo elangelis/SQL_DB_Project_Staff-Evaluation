@@ -62,6 +62,13 @@ CREATE TABLE manager (
   CONSTRAINT FIRMAFM FOREIGN KEY (firm) REFERENCES company (AFM),
   CONSTRAINT MNGRUSR FOREIGN KEY (managerUsername) REFERENCES user (username)
 );
+CREATE TABLE evaluator (
+  username varchar(12) NOT NULL,
+  exp_years tinyint NOT NULL DEFAULT '0',
+  firm char(9) NOT NULL,
+  CONSTRAINT EVLTRUSR FOREIGN KEY (username) REFERENCES user (username),
+  CONSTRAINT FIRMAFM2 FOREIGN KEY (firm) REFERENCES company (AFM)
+);
 CREATE TABLE requestevaluation (
   empl_username varchar(12) NOT NULL,
   job_id int NOT NULL,
@@ -89,13 +96,6 @@ CREATE TABLE evaluationresult (
   CONSTRAINT WHCHEMPL FOREIGN KEY (empl_username) REFERENCES employee (username),
   CONSTRAINT WHCHEVID FOREIGN KEY (Evld) REFERENCES requestevaluation (EvID),
   CONSTRAINT WHCHJOB FOREIGN KEY (job_id) REFERENCES job (id)
-);
-CREATE TABLE evaluator (
-  username varchar(12) NOT NULL,
-  exp_years tinyint NOT NULL DEFAULT '0',
-  firm char(9) NOT NULL,
-  CONSTRAINT EVLTRUSR FOREIGN KEY (username) REFERENCES user (username),
-  CONSTRAINT FIRMAFM2 FOREIGN KEY (firm) REFERENCES company (AFM)
 );
 CREATE TABLE has_degree (
   degr_title varchar(50) DEFAULT NULL,
