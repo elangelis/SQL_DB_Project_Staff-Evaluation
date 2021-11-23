@@ -36,3 +36,9 @@ CREATE TRIGGER ad_request AFTER DELETE ON requestevaluation
 FOR EACH ROW
 INSERT INTO log (`Event`, `Table`, `Date`)
 VALUES ('Delete', 'RequestEvaluation', now());
+
+DELIMITER $$
+CREATE TRIGGER bu_company BEFORE UPDATE ON company FOR EACH ROW 
+BEGIN
+IF NEW.AFM<>OLD.AFM THEN SET NEW.AFM=OLD.AFM; END IF;
+END $$
