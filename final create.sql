@@ -127,3 +127,10 @@ CREATE TABLE project (
   PRIMARY KEY (num),
   CONSTRAINT PROJEMPL FOREIGN KEY (empl) REFERENCES employee (username)
 );
+CREATE TABLE log (
+ID int auto_increment,
+Event varchar(50) NOT NULL,
+Table varchar (50) NOT NULL,
+Date timestamp NOT NULL,
+PRIMARY KEY (`ID`)
+);
