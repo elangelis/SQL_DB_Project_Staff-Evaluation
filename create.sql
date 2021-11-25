@@ -256,3 +256,21 @@ CREATE TABLE administrator
     ON UPDATE CASCADE ON DELETE CASCADE
 
 );
+
+DROP TABLE IF EXISTS log;
+CREATE TABLE log
+(
+    user varchar(12),
+    change_id VARCHAR(12),
+    type_of_change VARCHAR(12),
+    table_of_change varchar(12),
+    day_of_change DATE,
+    time_of_change TIMESTAMP,
+    success set("yes","no"),
+    details varchar(40),
+    PRIMARY KEY change_id,
+
+    CONSTRAINT WHICHUSR2
+    FOREIGN KEY user REFERENCES user(username)
+
+);
