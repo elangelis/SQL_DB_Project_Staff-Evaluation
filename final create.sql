@@ -106,7 +106,7 @@ CREATE TABLE evaluationphases (
 );
 DROP TABLE IF EXISTS evaluationresult;
 CREATE TABLE evaluationresult (
-  Evld int NOT NULL,
+  EvID int NOT NULL,
   empl_username varchar(12) NOT NULL,
   job_id int NOT NULL,
   grade int DEFAULT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE evaluationresult (
   evaluator varchar(15) DEFAULT NULL,
   CONSTRAINT EVALUATOR FOREIGN KEY (evaluator) REFERENCES evaluator (username),
   CONSTRAINT WHCHEMPL FOREIGN KEY (empl_username) REFERENCES employee (username),
-  CONSTRAINT WHCHEVID FOREIGN KEY (Evld) REFERENCES requestevaluation (EvID),
+  CONSTRAINT WHCHEVID FOREIGN KEY (EvID) REFERENCES requestevaluation (EvID),
   CONSTRAINT WHCHJOB FOREIGN KEY (job_id) REFERENCES job (id)
 );
 DROP TABLE IF EXISTS has_degree;
