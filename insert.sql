@@ -34,12 +34,12 @@ INSERT INTO manager(managerUsername,exp_years,firm) VALUES ('G.THEODOROU',10,123
 
 /*----EVALUATOR-----*/
 
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('G.PAPADOP',10,123456789);
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('G.PAPADIMA',10,123456788);
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('N.BARDAKI',8,123123123);
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('E.BARDAKI',7,123123789);
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('G.PAPADOP',10,123123456);
-INSERT INTO evaluator(managerUsername,exp_years,firm) VALUES ('G.PAPADOP',10,123123123);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADOP',10,123456789);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADIMA',10,123456788);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('N.BARDAKI',8,123123123);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('E.BARDAKI',7,123123789);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADOP',10,123123456);
+INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADOP',10,123123123);
 
 
 /*----EMPLOYEE-----*/
@@ -58,13 +58,13 @@ INSERT INTO administrator(administrator_username,privilegies) VALUES ('H.AGGELIS
 
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','LYKEIO');
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','UNIV');
-INSERT INTO degree(titlos,idryma,bathmida) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO PATRWN','UNIV');
+INSERT INTO degree(titlos,idryma,bathmida) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO ATHINWN','UNIV');
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('ECONOMICS','PANEPISTIMIO PELOPONISOU','UNIV');
-INSERT INTO degree(titlos,idryma,bathmida) VALUES ('DATA SCIENCE','PANEPISTIMIO PATRWN','MASTER');
-INSERT INTO degree(titlos,idryma,bathmida) VALUES ('DATA SCIENCE','ETHNIKO METSOVEIO POLITEXNEIO','MASTER');
+INSERT INTO degree(titlos,idryma,bathmida) VALUES ('DATA SCIENCE','PANEPISTIMIO DITIKIS ELLADAS','MASTER');
+INSERT INTO degree(titlos,idryma,bathmida) VALUES ('DATA SCIENCE AND DATABASES','ETHNIKO METSOVEIO POLITEXNEIO','MASTER');
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','PHD');
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('MATHEMATICS','ARISTOTELEIO PANEPISTIMIO','PHD');
-INSERT INTO degree(titlos,idryma,bathmida) VALUES ('PHYSICS','PANEPISTIMIO PATRWN','PHD');
+INSERT INTO degree(titlos,idryma,bathmida) VALUES ('PHYSICS','PANEPISTIMIO THESSALONIKIS','PHD');
 
 /*----HAS_DEGREE-----*/
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','T.TSOTRAS',2001,'19,3');
@@ -78,7 +78,7 @@ INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','E.THEODOROU',2013,'6,9');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO PATRWN','A.PAPASTAV',2014,'10');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('DATA SCIENCE','PANEPISTIMIO PATRWN','T.TSOTRAS',2014,'10');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('DATA SCIENCE','ETHNIKO METSOVEIO POLITEXNEIO','E.THEODOROU',2016,'8');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('DATA SCIENCE AND DATABASES','ETHNIKO METSOVEIO POLITEXNEIO','E.THEODOROU',2016,'8');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','T.TSOTRAS',2018,'9');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','E.THEODOROU',2020,'9,5');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('MATHEMATICS','ARISTOTELEIO PANEPISTIMIO','I.TSOTRA',2015,'7,6');
@@ -188,6 +188,7 @@ INSERT INTO requestevaluation(empl_username,job_id) VALUES ('I.TSOTRA',0008);
 INSERT INTO requestevaluation(empl_username,job_id) VALUES ('E.THEODOROU',0008);
 INSERT INTO requestevaluation(empl_username,job_id) VALUES ('A.PAPASTAV',0008);
 
+
 /*----EVALUATIONRESULT-----*/
 
 INSERT INTO evaluationresult(EvId,empl_username,job_id,grade,comments) VALUES (0001,'T.TSOTRAS',0001,NULL,'DEFAULT');
@@ -273,5 +274,4 @@ INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0037,NULL,NULL,N
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0038,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0039,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0040,NULL,NULL,NULL);
-
 
