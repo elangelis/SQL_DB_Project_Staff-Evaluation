@@ -1,3 +1,4 @@
+
 /*----USER-----*/
 
 INSERT INTO user(username,pass,name,reg_date,email) VALUES ('N.TSIPOURAS',123456789,'NIKOS TSIPOURAS','2000-09-28 08:47:31','n.tsipouras@ceid.gr');
@@ -42,13 +43,15 @@ INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADOP',10,123123456)
 INSERT INTO evaluator(username,exp_years,firm) VALUES ('G.PAPADOP',10,123123123);
 
 
+
 /*----EMPLOYEE-----*/
 
-INSERT INTO employee(username,bio,sistatikes,certificates,awards) VALUES ('T.TSOTRAS',NULL,NULL,NULL,NULL);
-INSERT INTO employee(username,bio,sistatikes,certificates,awards) VALUES ('P.MPISKOS',NULL,NULL,NULL,NULL);
-INSERT INTO employee(username,bio,sistatikes,certificates,awards) VALUES ('I.TSOTRA',NULL,NULL,NULL,NULL);
-INSERT INTO employee(username,bio,sistatikes,certificates,awards) VALUES ('E.THEODOROU',NULL,NULL,NULL,NULL);
-INSERT INTO employee(username,bio,sistatikes,certificates,awards) VALUES ('A.PAPASTAV',NULL,NULL,NULL,NULL);
+INSERT INTO employee(username,bio,sistatikes,certificates,awards,WorkingFor,fullName) VALUES ('T.TSOTRAS',NULL,NULL,NULL,NULL,NULL,'THEOFILOS TSOTRAS');
+INSERT INTO employee(username,bio,sistatikes,certificates,awards,WorkingFor,fullName) VALUES ('P.MPISKOS',NULL,NULL,NULL,NULL,NULL,'PAULOS MPISKOS');
+INSERT INTO employee(username,bio,sistatikes,certificates,awards,WorkingFor,fullName) VALUES ('I.TSOTRA',NULL,NULL,NULL,NULL,NULL,'IOANNA TSOTRA');
+INSERT INTO employee(username,bio,sistatikes,certificates,awards,WorkingFor,fullName) VALUES ('E.THEODOROU',NULL,NULL,NULL,NULL,NULL,'ELISAVET THEODOROU');
+INSERT INTO employee(username,bio,sistatikes,certificates,awards,WorkingFor,fullName) VALUES ('A.PAPASTAV',NULL,NULL,NULL,NULL,NULL,'KATERINA PAPASTAUROU');
+
 
 /*----ADMINISTRATOR-----*/
 
@@ -110,7 +113,7 @@ INSERT INTO project(empl,num,descr,url) VALUES ('P.MPISKOS',NULL,'DEFAULT','www.
 /*----JOB-----*/
 
 INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0001,'2022-05-25',20000,'manager','ATHENS','G.PAPADOP','2021-11-22 12:58:01','2022-01-01');
-INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0002,'2022-05-25',400000,'manager','ATHENS','G.PAPADIMA','2021-10-22 12:58:02','2022-02-02');
+INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0002,'2022-05-25',40000,'manager','ATHENS','G.PAPADIMA','2021-10-22 12:58:02','2022-02-02');
 INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0003,'2022-05-25',800,'IT','PATRAS','N.BARDAKI','2021-09-25 12:58:03','2022-01-02');
 INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0004,'2022-05-25',1200,'code','ATHENS','E.BARDAKI','2021-08-01 12:58:04','2022-02-03');
 INSERT INTO job(id,start_date,salary,position,edra,evaluator,announce_date,submission_date) VALUES (0005,'2022-01-01',800,'secretary','PATRAS','G.PAPADOP','2021-08-01 12:58:04','2021-12-12');
@@ -191,46 +194,46 @@ INSERT INTO requestevaluation(empl_username,job_id) VALUES ('A.PAPASTAV',0008);
 
 /*----EVALUATIONRESULT-----*/
 
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0001,'T.TSOTRAS',0001,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0002,'P.MPISKOS',0001,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0003,'I.TSOTRA',0001,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0004,'E.THEODOROU',0001,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0005,'A.PAPASTAV',0001,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0006,'T.TSOTRAS',0002,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0007,'P.MPISKOS',0002,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0008,'I.TSOTRA',0002,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0009,'E.THEODOROU',0002,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0010,'A.PAPASTAV',0002,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0011,'T.TSOTRAS',0003,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0012,'P.MPISKOS',0003,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0013,'I.TSOTRA',0003,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0014,'E.THEODOROU',0003,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0015,'A.PAPASTAV',0003,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0016,'T.TSOTRAS',0004,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0017,'P.MPISKOS',0004,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0018,'I.TSOTRA',0004,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0019,'E.THEODOROU',0004,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0020,'A.PAPASTAV',0004,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0021,'T.TSOTRAS',0005,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0022,'P.MPISKOS',0005,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0023,'I.TSOTRA',0005,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0024,'E.THEODOROU',0005,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0025,'A.PAPASTAV',0005,NULL,'DEFAULT','G.PAPADOP');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0026,'T.TSOTRAS',0006,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0027,'P.MPISKOS',0006,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0028,'I.TSOTRA',0006,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0029,'E.THEODOROU',0006,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0030,'A.PAPASTAV',0006,NULL,'DEFAULT','G.PAPADIMA');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0031,'T.TSOTRAS',0007,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0032,'P.MPISKOS',0007,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0033,'I.TSOTRA',0007,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0034,'E.THEODOROU',0007,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0035,'A.PAPASTAV',0007,NULL,'DEFAULT','N.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0036,'T.TSOTRAS',0008,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0037,'P.MPISKOS',0008,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0038,'I.TSOTRA',0008,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0039,'E.THEODOROU',0008,NULL,'DEFAULT','E.BARDAKI');
-INSERT INTO evaluationresult(Evld,empl_username,job_id,grade,comments,evaluator) VALUES (0040,'A.PAPASTAV',0008,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0001,'T.TSOTRAS',0001,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0002,'P.MPISKOS',0001,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0003,'I.TSOTRA',0001,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0004,'E.THEODOROU',0001,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0005,'A.PAPASTAV',0001,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0006,'T.TSOTRAS',0002,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0007,'P.MPISKOS',0002,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0008,'I.TSOTRA',0002,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0009,'E.THEODOROU',0002,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0010,'A.PAPASTAV',0002,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0011,'T.TSOTRAS',0003,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0012,'P.MPISKOS',0003,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0013,'I.TSOTRA',0003,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0014,'E.THEODOROU',0003,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0015,'A.PAPASTAV',0003,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0016,'T.TSOTRAS',0004,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0017,'P.MPISKOS',0004,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0018,'I.TSOTRA',0004,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0019,'E.THEODOROU',0004,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0020,'A.PAPASTAV',0004,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0021,'T.TSOTRAS',0005,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0022,'P.MPISKOS',0005,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0023,'I.TSOTRA',0005,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0024,'E.THEODOROU',0005,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0025,'A.PAPASTAV',0005,NULL,'DEFAULT','G.PAPADOP');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0026,'T.TSOTRAS',0006,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0027,'P.MPISKOS',0006,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0028,'I.TSOTRA',0006,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0029,'E.THEODOROU',0006,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0030,'A.PAPASTAV',0006,NULL,'DEFAULT','G.PAPADIMA');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0031,'T.TSOTRAS',0007,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0032,'P.MPISKOS',0007,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0033,'I.TSOTRA',0007,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0034,'E.THEODOROU',0007,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0035,'A.PAPASTAV',0007,NULL,'DEFAULT','N.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0036,'T.TSOTRAS',0008,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0037,'P.MPISKOS',0008,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0038,'I.TSOTRA',0008,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0039,'E.THEODOROU',0008,NULL,'DEFAULT','E.BARDAKI');
+INSERT INTO evaluationresult(EvID,empl_username,job_id,grade,comments,evaluator) VALUES (0040,'A.PAPASTAV',0008,NULL,'DEFAULT','E.BARDAKI');
 
 /*----EVALUATIONPHASES-----*/
 
@@ -274,4 +277,6 @@ INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0037,NULL,NULL,N
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0038,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0039,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0040,NULL,NULL,NULL);
+
+
 
