@@ -4,7 +4,7 @@ BEGIN
 SELECT EvID FROM requestevaluation WHERE empl_username=username;
 SELECT EvID FROM evaluationresult WHERE empl_username=username AND grade>0;
 SELECT evaluator FROM evaluationresult WHERE empl_username=username;
-IF evaluationresult=null THEN SELECT 'Evaluation in progress'; END IF;
+IF evaluationresult.grade=null THEN SELECT 'Evaluation in progress'; END IF;
 END$$
 DELIMITER ;
 
