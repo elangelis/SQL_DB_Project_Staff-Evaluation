@@ -15,17 +15,6 @@ IF grade<>null THEN
 SELECT 'Final Tables';
 SELECT empl_username,grade FROM evaluationresult WHERE JobID=job_id ORDER BY grade DESC;
 ELSEIF grade IS null THEN
-SELECT 'Evaluations in progress' + COUNT(*) FROM evaluationresult WHERE grade=null; END IF;
-END$$
-DELIMITER ;
-
-DELIMITER $$
-CREATE PROCEDURE `Evaluations` (JobID int)
-BEGIN
-IF grade<>null THEN
-SELECT 'Final Tables'
-SELECT empl_username,grade FROM evaluationresult WHERE JobID=job_id ORDER BY grade DESC;
-ELSEIF grade IS null THEN
-SELECT 'Evaluations in progress',COUNT(*) FROM evaluationresult WHERE grade=null END IF;
+SELECT 'Evaluations in progress', COUNT(*) FROM evaluationresult WHERE grade=null; END IF;
 END$$
 DELIMITER ;
