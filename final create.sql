@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS staffevaluation;
 CREATE DATABASE staffevaluation;
+USE staffevaluation;
 CREATE TABLE user (
   username varchar(12) NOT NULL DEFAULT 'unknown',
   pass varchar(10) NOT NULL,
@@ -19,17 +20,6 @@ CREATE TABLE company (
   city varchar(15) DEFAULT NULL,
   country varchar(15) DEFAULT NULL,
   PRIMARY KEY (AFM)
-);
-CREATE TABLE job (
-  id int NOT NULL,
-  start_date date DEFAULT NULL,
-  salary float(6,1) DEFAULT NULL,
-  position varchar(40) DEFAULT NULL,
-  edra varchar(45) DEFAULT NULL,
-  evaluator varchar(12) DEFAULT NULL,
-  announce_date datetime DEFAULT NULL,
-  submission_date date DEFAULT NULL,
-  PRIMARY KEY (id)
 );
 CREATE TABLE antikeim (
   title varchar(36) NOT NULL,
@@ -69,10 +59,22 @@ CREATE TABLE evaluator (
   CONSTRAINT EVLTRUSR FOREIGN KEY (username) REFERENCES user (username),
   CONSTRAINT FIRMAFM2 FOREIGN KEY (firm) REFERENCES company (AFM)
 );
+CREATE TABLE job (
+  id int NOT NULL,
+  start_date date DEFAULT NULL,
+  salary float(6,1) DEFAULT NULL,
+  position varchar(40) DEFAULT NULL,
+  edra varchar(45) DEFAULT NULL,
+  evaluator varchar(12) DEFAULT NULL,
+  announce_date datetime DEFAULT NULL,
+  submission_date date DEFAULT NULL,
+  PRIMARY KEY (id),
+  CONSTRAINT EVLTUSR FOREIGN KEY (evaluator) REFERENCES evaluator (username)
+);
 CREATE TABLE requestevaluation (
   empl_username varchar(12) NOT NULL,
   job_id int NOT NULL,
-  EvID int NOT NULL,
+  EvID int AUTO_INCREMENT,
   PRIMARY KEY (EvID),
   CONSTRAINT EMPLRQSTSEVAL FOREIGN KEY (empl_username) REFERENCES employee (username),
   CONSTRAINT FORJOB FOREIGN KEY (job_id) REFERENCES job (id)
@@ -130,7 +132,7 @@ CREATE TABLE project (
 CREATE TABLE log (
 ID int auto_increment,
 Event varchar(50) NOT NULL,
-Table varchar (50) NOT NULL,
-Date timestamp NOT NULL,
+Table_Target varchar (50) NOT NULL,
+Date timestamp,
 PRIMARY KEY (`ID`)
 );
