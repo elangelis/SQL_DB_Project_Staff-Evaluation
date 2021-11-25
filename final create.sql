@@ -134,5 +134,5 @@ ID int auto_increment,
 Event varchar(50) NOT NULL,
 Table_Target varchar (50) NOT NULL,
 Date timestamp,
-PRIMARY KEY (`ID`)
+PRIMARY KEY (ID)
 );
