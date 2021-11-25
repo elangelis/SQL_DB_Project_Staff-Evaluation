@@ -31,8 +31,7 @@ CREATE TABLE degree (
   titlos varchar(50) NOT NULL,
   idryma varchar(40) NOT NULL,
   bathmida enum('LYKEIO','UNIV','MASTER','PHD') DEFAULT NULL,
-  PRIMARY KEY (titlos),
-  UNIQUE KEY idryma (idryma)
+  PRIMARY KEY (titlos)
 );
 CREATE TABLE employee (
   username varchar(12) NOT NULL,
@@ -113,8 +112,7 @@ CREATE TABLE has_degree (
   etos year DEFAULT NULL,
   grade float(3,1) DEFAULT NULL,
   CONSTRAINT WHCHDEGREE FOREIGN KEY (degr_title) REFERENCES degree (titlos),
-  CONSTRAINT WHCHEMPL2 FOREIGN KEY (empl_usrname) REFERENCES employee (username),
-  CONSTRAINT WHRDEGREE FOREIGN KEY (degr_idryma) REFERENCES degree (idryma)
+  CONSTRAINT WHCHEMPL2 FOREIGN KEY (empl_usrname) REFERENCES employee (username)
 );
 CREATE TABLE languages (
   employee varchar(12) NOT NULL,
