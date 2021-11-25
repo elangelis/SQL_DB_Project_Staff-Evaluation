@@ -45,6 +45,13 @@ CREATE TABLE employee (
   CONSTRAINT EMPLUSR FOREIGN KEY (username) REFERENCES user (username),
   CONSTRAINT EMPLWRK FOREIGN KEY (WorkingFor) REFERENCES company (AFM)
 );
+CREATE TABLE administrator(
+    administrator_username varchar(12) NOT NULL,
+    privilegies set("YES","NO"),
+    PRIMARY KEY(administrator_username),
+    CONSTRAINT ADMNUSR
+    FOREIGN KEY (administrator_username) REFERENCES user(username)
+);
 CREATE TABLE manager (
   managerUsername varchar(12) NOT NULL,
   exp_years tinyint NOT NULL DEFAULT '0',
