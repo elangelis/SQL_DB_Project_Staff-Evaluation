@@ -80,3 +80,4 @@ BEGIN
    SELECT IFNULL(MAX(p.num), 0) + 1 INTO entry FROM project AS p WHERE p.empl = NEW.empl;
    SET NEW.num = entry;
 END$
+DELIMITER ;
