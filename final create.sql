@@ -146,7 +146,6 @@ CREATE TABLE project (
   num tinyint NOT NULL,
   descr text,
   url varchar(60) DEFAULT NULL,
-  PRIMARY KEY (num),
   CONSTRAINT PROJEMPL FOREIGN KEY (empl) REFERENCES employee (username)
 );
 DROP TABLE IF EXISTS log;
