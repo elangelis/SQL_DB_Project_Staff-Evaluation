@@ -70,22 +70,22 @@ INSERT INTO degree(titlos,idryma,bathmida) VALUES ('MATHEMATICS','ARISTOTELEIO P
 INSERT INTO degree(titlos,idryma,bathmida) VALUES ('PHYSICS','PANEPISTIMIO THESSALONIKIS','PHD');
 
 /*----HAS_DEGREE-----*/
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','T.TSOTRAS',2001,'19,3');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','P.MPISKOS',2002,'18,5');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','I.TSOTRA',2003,'17,9');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','T.TSOTRAS',2001,'19.3');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','P.MPISKOS',2002,'18.5');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','I.TSOTRA',2003,'17.9');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','E.THEODOROU',2004,'20');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','A.PAPASTAV',2005,'18,9');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','T.TSOTRAS',2010,'8,8');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO PATRWN','P.MPISKOS',2011,'8,5');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ECONOMICS','PANEPISTIMIO PELOPONISOU','I.TSOTRA',2012,'9,2');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','E.THEODOROU',2013,'6,9');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('APOLITIRIO LYKEIOU','1O LYKEIO XALANDRIOU','A.PAPASTAV',2005,'18.9');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','T.TSOTRAS',2010,'8.8');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO PATRWN','P.MPISKOS',2011,'8.5');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ECONOMICS','PANEPISTIMIO PELOPONISOU','I.TSOTRA',2012,'9.2');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('COMPUTER ENGINNEERING & INFORMATICS DEPARTMENT','PANEPISTIMIO PATRWN','E.THEODOROU',2013,'6.9');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('CHEMICAL ENGINEERING','PANEPISTIMIO PATRWN','A.PAPASTAV',2014,'10');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('DATA SCIENCE','PANEPISTIMIO PATRWN','T.TSOTRAS',2014,'10');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('DATA SCIENCE AND DATABASES','ETHNIKO METSOVEIO POLITEXNEIO','E.THEODOROU',2016,'8');
 INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','T.TSOTRAS',2018,'9');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','E.THEODOROU',2020,'9,5');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('MATHEMATICS','ARISTOTELEIO PANEPISTIMIO','I.TSOTRA',2015,'7,6');
-INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('PHYSICS','PANEPISTIMIO PATRWN','A.PAPASTAV',2017,'9,5');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('ARTIFICIAL INTELLIGENCE','STOCKHOLM UNIVERSITY','E.THEODOROU',2020,'9.5');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('MATHEMATICS','ARISTOTELEIO PANEPISTIMIO','I.TSOTRA',2015,'7.6');
+INSERT INTO has_degree(degr_title,degr_idryma,empl_usrname,etos,grade) VALUES ('PHYSICS','PANEPISTIMIO PATRWN','A.PAPASTAV',2017,'9.5');
 
 
 /*----LANGUAGES-----*/
@@ -94,19 +94,19 @@ INSERT INTO languages(employee,lang) VALUES ('T.TSOTRAS','EN,GR,FR');
 INSERT INTO languages(employee,lang) VALUES ('P.MPISKOS','EN,GR,FR');
 INSERT INTO languages(employee,lang) VALUES ('I.TSOTRA','EN,GR,FR,SP');
 INSERT INTO languages(employee,lang) VALUES ('E.THEODOROU','EN,GR,SP');
-INSERT INTO languages(employee,lang) VALUES ('A.PAPASTAV','EN,GR,');
+INSERT INTO languages(employee,lang) VALUES ('A.PAPASTAV','EN,GR');
 
 
 /*----PROJECT-----*/
 
-INSERT INTO project(empl,num,descr,url) VALUES ('T.TSOTRAS',NULL,'DEFAULT','www.project0001.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('T.TSOTRAS',NULL,'DEFAULT','www.project0010.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('I.TSOTRA',NULL,'DEFAULT','www.project0100.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('I.TSOTRA',NULL,'DEFAULT','www.project1000.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('A.PAPASTAV',NULL,'DEFAULT','www.project0002.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('E.THEODOROU',NULL,'DEFAULT','www.project0020.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('E.THEODOROU',NULL,'DEFAULT','www.project0200.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('P.MPISKOS',NULL,'DEFAULT','www.project2000.com');
+INSERT INTO project(empl,descr,url) VALUES ('T.TSOTRAS','DEFAULT','www.project0001.com');
+INSERT INTO project(empl,descr,url) VALUES ('T.TSOTRAS','DEFAULT','www.project0010.com');
+INSERT INTO project(empl,descr,url) VALUES ('I.TSOTRA','DEFAULT','www.project0100.com');
+INSERT INTO project(empl,descr,url) VALUES ('I.TSOTRA','DEFAULT','www.project1000.com');
+INSERT INTO project(empl,descr,url) VALUES ('A.PAPASTAV','DEFAULT','www.project0002.com');
+INSERT INTO project(empl,descr,url) VALUES ('E.THEODOROU','DEFAULT','www.project0020.com');
+INSERT INTO project(empl,descr,url) VALUES ('E.THEODOROU','DEFAULT','www.project0200.com');
+INSERT INTO project(empl,descr,url) VALUES ('P.MPISKOS','DEFAULT','www.project2000.com');
 
 
 
@@ -277,6 +277,3 @@ INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0037,NULL,NULL,N
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0038,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0039,NULL,NULL,NULL);
 INSERT INTO evaluationphases(EvID,phase1,phase2,phase3) VALUES (0040,NULL,NULL,NULL);
-
-
-
