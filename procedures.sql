@@ -81,51 +81,61 @@ select * from evaluationphases;
 
 /*3.3 ΕΡΏΤΗΜΑ */
 
-UPDATE evaluationresult AS er
-INNER JOIN evaluationphases AS ep ON ep.EvID=er.EvID
-WHERE   ( 
-        IF(ep.phase1<>null AND ep.phase2<>null AND ep.phase3<>null)
-            THEN
-                SET GRADE=ep.phase1+ep.phase2+ep.phase3;
-                UPDATE evaluationresult SET grade=GRADE
-        END IF;
-        )
-END$$
-DELIMITER ;
 
+DROP PROCEDURE IF EXISTS Evaluations;
 DELIMITER $$
-CREATE PROCEDURE Evaluations (IN JobID int)
+CREATE PROCEDURE Evaluations (IN JOBIDC int)
 BEGIN
-IF grade<>null THEN
-SELECT 'Final Tables';
-SELECT empl_username,grade FROM evaluationresult WHERE JobID=job_id ORDER BY grade DESC;
-ELSEIF grade IS null THEN
-SELECT 'Evaluations in progress', COUNT(*) FROM evaluationresult WHERE grade=null; END IF;
+
+DECLARE GRADES INT;
+DECLARE EVIDB INT;
+DECLARE REDFLAG INT;
+DECLARE FINISHEDFLAG INT;
+DECLARE EXAMPLE INT;
+
+DECLARE ERCURSR CURSOR FOR
+    SELECT EvID
+    FROM evaluationresult AS er 
+    WHERE (er.job_id = JOBIDC);
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET FINISHEDFLAG=1;
+
+SET REDFLAG=0;
+OPEN ERCURSR;
+SET FINISHEDFLAG=0;
+FETCH ERCURSR INTO EVIDB;
+WHILE (FINISHEDFLAG=0) DO
+    SELECT er.grade
+    INTO EXAMPLE
+    FROM evaluationresult AS er
+    WHERE er.EvID=EVIDB;
+    IF EXAMPLE IS NULL
+        THEN 
+            SET REDFLAG=1;
+    END IF;
+    FETCH ERCURSR INTO EVIDB;
+END WHILE;
+CLOSE ERCURSR;
+
+IF (REDFLAG=0) THEN 
+    SELECT"DEN UPARXOUN NULL";
+    SELECT EvID AS "KWDIKOS OLOKLIROMENWN AKSIOLOGISIEWN",job_id AS "KWDIKOS DOULEIAS", grade AS "BATHMOS AKSIOLOGISIS"  
+    FROM evaluationresult 
+    WHERE (job_id=JOBIDC)
+    ORDER BY grade DESC;
+   
+ELSE
+    SELECT EvID AS "OLOKLIROMENES AKSIOLOGISEIS",job_id AS "KWDIKOS DOULEIAS", grade AS "BATHMOS AKSIOLOGISIS"
+    FROM evaluationresult 
+    WHERE (job_id=JOBIDC) AND (grade IS NOT NULL)
+    ORDER BY grade DESC;
+
+    SELECT "UPARXOUN NULL";
+    SELECT COUNT(*) AS "AKSIOLOGISEIS POU EKREMOUN:"
+    FROM evaluationresult
+    WHERE (grade IS NULL) AND (job_id=JOBIDC);
+END IF;
+
 END$$
 DELIMITER ;
-
-
-
-
-
-/* 3.1.Γ ΕΡΏΤΗΜΑ προσπαθεια με cursor */ 
-
-DECLARE finishedflag INT(4);                                                                               
-DECLARE CURSOR ev_fullnameCURS                                                                  
-CURSOR FOR
-SELECT evaluator FROM requestevaluation WHERE empl_username=username_IPAL AND grade<>NULL;        
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET finishedflag=1;
-    OPEN ev_fullnameCURS;
-        SET finishedflag=0;
-        REPEAT
-            FETCH ev_fullnameCURS INTO EVALUATOR_NAME;
-                 IF (finishedflag=0) THEN 
-                    SELECT ev_fullname AS "Evaluator Full Name: /n";
-                END IF;        
-             UNTIL (finishedflag=1)
-        END REPEAT;
-    CLOSE ev_fullnameCURS;
-SELECT 'Evaluation in progress';
-                    SELECT EvID,phase1,phase2,phase3 from evaluationphases
-                    INNER JOIN evaluationresult ON evaluationresult.grade=NULL;
-                END IF;
+CALL Evaluations(1);
+CALL Evaluations(8);
