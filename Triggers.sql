@@ -71,3 +71,12 @@ IF NEW.username<>OLD.username THEN
 	SIGNAL SQLSTATE '45000'
     SET MESSAGE_TEXT = 'This update is not permited'; END IF;
 END $
+
+DROP TRIGGER IF EXISTS bu_project$
+CREATE TRIGGER bu_project
+BEFORE INSERT ON project FOR EACH ROW
+BEGIN
+   DECLARE entry int;
+   SELECT IFNULL(MAX(p.num), 0) + 1 INTO entry FROM project AS p WHERE p.empl = NEW.empl;
+   SET NEW.num = entry;
+END$
