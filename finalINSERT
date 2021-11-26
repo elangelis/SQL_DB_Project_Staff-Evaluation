@@ -1,3 +1,4 @@
+
 /*----USER-----*/
 
 INSERT INTO user(username,pass,name,reg_date,email) VALUES ('N.TSIPOURAS',123456789,'NIKOS TSIPOURAS','2000-09-28 08:47:31','n.tsipouras@ceid.gr');
@@ -98,14 +99,14 @@ INSERT INTO languages(employee,lang) VALUES ('A.PAPASTAV','EN,GR');
 
 /*----PROJECT-----*/
 
-INSERT INTO project(empl,num,descr,url) VALUES ('T.TSOTRAS',NULL,'DEFAULT','www.project0001.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('T.TSOTRAS',NULL,'DEFAULT','www.project0010.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('I.TSOTRA',NULL,'DEFAULT','www.project0100.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('I.TSOTRA',NULL,'DEFAULT','www.project1000.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('A.PAPASTAV',NULL,'DEFAULT','www.project0002.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('E.THEODOROU',NULL,'DEFAULT','www.project0020.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('E.THEODOROU',NULL,'DEFAULT','www.project0200.com');
-INSERT INTO project(empl,num,descr,url) VALUES ('P.MPISKOS',NULL,'DEFAULT','www.project2000.com');
+INSERT INTO project(empl,descr,url) VALUES ('T.TSOTRAS','DEFAULT','www.project0001.com');
+INSERT INTO project(empl,descr,url) VALUES ('T.TSOTRAS','DEFAULT','www.project0010.com');
+INSERT INTO project(empl,descr,url) VALUES ('I.TSOTRA','DEFAULT','www.project0100.com');
+INSERT INTO project(empl,descr,url) VALUES ('I.TSOTRA','DEFAULT','www.project1000.com');
+INSERT INTO project(empl,descr,url) VALUES ('A.PAPASTAV','DEFAULT','www.project0002.com');
+INSERT INTO project(empl,descr,url) VALUES ('E.THEODOROU','DEFAULT','www.project0020.com');
+INSERT INTO project(empl,descr,url) VALUES ('E.THEODOROU','DEFAULT','www.project0200.com');
+INSERT INTO project(empl,descr,url) VALUES ('P.MPISKOS','DEFAULT','www.project2000.com');
 
 
 
