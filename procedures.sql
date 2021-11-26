@@ -3,22 +3,40 @@ DELIMITER $$
 CREATE PROCEDURE ApplicationsSearch(IN a varchar(45))
 BEGIN
     DECLARE username_IPAL varchar(12);
-    DECLARE ev_fullname VARCHAR(45);
-    DECLARE Grade INT;
+    DECLARE GradeB INT;
 
-        SELECT username INTO username_IPAL from employee WHERE fullName=a;
+    SELECT username INTO username_IPAL from employee WHERE fullName=a;
+        
         /* 3.1.Α ΕΡΏΤΗΜΑ */
-        SELECT EvID FROM requestevaluation WHERE empl_username=username_IPAL;
-        /* 3.1.Β ΕΡΏΤΗΜΑ */
-        SELECT EvID,job_id FROM evaluationresult WHERE empl_username=username_IPAL AND grade<>null;
+        SELECT re.EvID as "sinolo aitisewn",u.name as "evaluator fullname"
+        FROM requestevaluation AS re 
+        INNER JOIN evaluationresult AS er ON er.EvID=re.EvID
+        INNER JOIN user AS u ON u.username=er.evaluator
+        WHERE re.empl_username=username_IPAL;
 
-        /* 3.1.Γ ΕΡΏΤΗΜΑ*/
-        SELECT u.name AS "FULL NAME",ep.phase1 AS "PHASE 1",ep.phase2 AS "PHASE 2",ep.phase3 AS "PHASE 3" 
-        FROM user AS u
-        INNER JOIN evaluator AS e ON e.username=u.username
-        INNER JOIN evaluationresult AS er ON er.empl_username=e.username AND grade<>null
-        INNER JOIN evaluationphases AS ep ON ep.EvID=er.EvID
-        WHERE username_IPAL=er.empl_username;
+        SELECT "OLOKLIROMENES AKSIOLOGISEIS";
+        /* 3.1.Β ΕΡΏΤΗΜΑ MAZI ME 3.1.Γ ΕΡΏΤΗΜΑ */
+        SELECT er.EvID AS "KWDIKOS AKSIOLOGISIS",er.job_id AS "KWDIKOS THESIS ERGASIAS",er.grade AS"GRADE:" ,u.name AS"evaluator fullname"
+        FROM evaluationresult AS er 
+        INNER JOIN user AS u ON u.username=er.evaluator
+        WHERE   empl_username=username_IPAL 
+                AND grade IS NOT NULL ;
+        
+        
+        SELECT "AKSIOLOGISEIS SE EKSELIKSI ";
+        /*3.1.Δ ΕΡΏΤΗΜΑ */
+        SELECT  er.EvID AS "KWDIKOS AKSIOLOGISIS",
+                er.job_id AS "KWDIKOS THESIS ERGASIAS",
+                ep.phase1 AS "PHASE 1:",
+                ep.phase2 AS "PHASE 2:",
+                ep.phase3 AS "PHASE 3:",
+                u.name AS "evaluator fullname"
+        FROM evaluationresult AS er
+        INNER JOIN evaluationphases AS ep ON er.EvID=ep.EvID
+        INNER JOIN user AS u ON u.username=er.evaluator
+        WHERE   empl_username=username_IPAL
+                AND er.grade IS NULL;
+        
 END$$
 DELIMITER ;
 CALL ApplicationsSearch('THEOFILOS TSOTRAS');
@@ -30,42 +48,38 @@ DELIMITER $$
 CREATE PROCEDURE EvPhases (IN JOBID_A int, IN Eval_A varchar(12))
 BEGIN
 
-DECLARE GRADE INT;
-DECLARE EVID INT;
+DECLARE GRADES INT;
+DECLARE EVIDB INT;
 DECLARE FINISHEDFLAG INT;
 
 DECLARE EvPhasesCurs CURSOR FOR
     SELECT EvID  
     FROM evaluationresult as er 
     WHERE ((er.job_id=JOBID_A) AND (er.evaluator=Eval_A));
-
 DECLARE CONTINUE HANDLER FOR NOT FOUND SET FINISHEDFLAG=1;
+
 OPEN EvPhasesCurs;
 SET FINISHEDFLAG=0;
-    FETCH EvPhasesCurs INTO EVID;
+    FETCH EvPhasesCurs INTO EVIDB;
     WHILE (FINISHEDFLAG)=0 DO
         UPDATE evaluationresult AS er
-        INNER JOIN evaluationphases AS ep ON ep.EvID=er.EvID
-        SET  er.grade = ep.phase1 + ep.phase2 + ep.phase3,
-            GRADE= phase1 + phase2 + phase3
-        WHERE ep.EvID=EVID AND  (phase1<>NULL) AND (phase2<>NULL) AND (phase3<>NULL) ;
-        SELECT GRADE;
-        SELECT EVID;
-        FETCH EvPhasesCurs INTO EVID;
+        INNER JOIN evaluationphases AS ep ON ep.EvID = er.EvID
+        SET  er.grade = ep.phase1 + ep.phase2 + ep.phase3
+        WHERE ep.EvID=EVIDB;
+        SELECT EVIDB;
+        FETCH EvPhasesCurs INTO EVIDB;
     END WHILE;
 CLOSE EvPhasesCurs;
 END$$
 DELIMITER ;
-CALL EvPhases(0001,"G.PAPADOP");
-select * from evaluationresult  LIMIT 5;
-select * from evaluationphases LIMIT 5;
+CALL EvPhases(0004,"E.BARDAKI");
+CALL EvPhases(0005,"G.PAPADOP");
+select * from evaluationresult;
+select * from evaluationphases;
 
 
 
-
-/*SELECT ep.phase1,ep.phase2,ep.phase3
-FROM evaluationphases
-INNER JOIN */
+/*3.3 ΕΡΏΤΗΜΑ */
 
 UPDATE evaluationresult AS er
 INNER JOIN evaluationphases AS ep ON ep.EvID=er.EvID
