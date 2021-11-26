@@ -1,4 +1,3 @@
-
 /*----USER-----*/
 
 INSERT INTO user(username,pass,name,reg_date,email) VALUES ('N.TSIPOURAS',123456789,'NIKOS TSIPOURAS','2000-09-28 08:47:31','n.tsipouras@ceid.gr');
