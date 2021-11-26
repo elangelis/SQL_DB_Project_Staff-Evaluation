@@ -131,7 +131,6 @@ DROP TABLE IF EXISTS languages;
 CREATE TABLE languages (
   employee varchar(12) NOT NULL,
   lang set('EN','FR','SP','GR') NOT NULL,
-  PRIMARY KEY (lang),
   CONSTRAINT LANGEMPL FOREIGN KEY (employee) REFERENCES employee (username)
 );
 DROP TABLE IF EXISTS needs;
